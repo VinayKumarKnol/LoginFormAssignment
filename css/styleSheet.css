@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Permanent+Marker');
+
+* {
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
+    background-color: black;
+    color: white;
+}
+
+form {
+    align-content: center !important;
+}
+
+input {
+    background-color: white;
+    font-family: 'Homemade Apple', cursive;
+    border-radius: 5px;
+    color: black;
+    padding: 4px;
+}
+
+label {
+    align-content: center;
+}
+
+button {
+    border-radius: 30px !important;
+    size: 60px;
+}
