@@ -62,9 +62,14 @@ $().ready(function () {
                 type: "GET",
                 //data:
                 cache: false,
-                success: function (data) {
+                success: function (result) {
                     $("#msg").text("Loaded.");
-
+                    console.log(result);
+                    var obj = result.data;
+                    $("#content").html("<h2>Id: " + obj.id + "</h2>")
+                        .append("<h2>first name: " + obj.first_name + "</h2>")
+                        .append("<h2>last name: " + obj.last_name + " </h2>")
+                        .append("<img src=\""+obj.avatar+"\" alt=myface>");
                 },
                 error: function (errata) {
                     $("#msg").text("..failed");
