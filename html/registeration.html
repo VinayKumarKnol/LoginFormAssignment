@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styleSheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/js/formValidator.js"></script>
+    <script src="../js/formValidator.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 </head>
@@ -16,34 +16,39 @@
     <div class="card-header">
         Registeration
     </div>
-    <form method="get" class="card-block" id="signUpForm" action="displayInfo.html">
+    <form method="get" class="card-block" id="signUpForm" autocomplete="off">
         <div class="form-group">
             <label class="label label-success">First Name:</label><br>
-            <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="First Name...." required/><br>
+            <input type="text" id="firstName" name="firstName" placeholder="First Name...."
+                   required onblur="$('#signUpForm').validate()"/><br>
         </div>
         <div class="form-group">
             <label class="label label-success">Last Name:</label><br>
-            <input type="text" id="lastName" name="lastName" maxlength="20" placeholder="Last Name...."/><br>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name...."
+                   onblur="$('#signUpForm').validate()"/><br>
         </div>
         <div class="form-group">
             <label class="label label-success">Email:</label><br>
-            <input type="email" id="userEmail" name="userEmail" maxlength="50" placeholder="Email..."/><br>
+            <input type="email" id="userEmail" name="userEmail" placeholder="Email..."
+                   onblur="$('#signUpForm').validate()"/><br>
         </div>
         <div class="form-group">
             <label class="label label-success">Gender:</label><br>
             <input class="radio-inline" type="radio" name="gender" value="male" checked>Male
-            <input class="radio-inline"type="radio"  name="gender" value="female">Female
+            <input class="radio-inline" type="radio" name="gender" value="female">Female
             <br>
         </div>
         <div class="form-group">
             <label class="label label-success">Confirm:</label><br>
-            <input type="email" id="emailVerify" name="emailVerify" maxlength="50" placeholder="Confirm Email..."/><br>
+            <input type="email" id="emailVerify" name="emailVerify" placeholder="Confirm Email..."
+                   onblur="$('#signUpForm').validate()"/><br>
         </div>
         <div class="form-group">
             <label class="label label-success">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" minlength="10" placeholder="Enter Phone number..."/><br>
+            <input type="tel" id="phone" name="phone" placeholder="Enter Phone number..."
+                   onblur="$('#signUpForm').validate()"/><br>
         </div>
-        <button type="submit" class="btn-lg btn-success" onclick="$('#signUpForm').validate()">Register</button>
+        <button type="submit" class="btn-lg btn-success">Register</button>
     </form>
 </div>
 </body>

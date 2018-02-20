@@ -41,4 +41,3 @@ $().ready(function () {
         )
     }
 );
-
