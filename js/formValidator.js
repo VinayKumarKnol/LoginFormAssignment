@@ -38,6 +38,40 @@ $().ready(function () {
                     }
                 }
             }
-        )
+        );
+
+        $('#signUpForm').submit(function (e) {
+            e.preventDefault();
+            if ($('#signUpForm').valid()) {
+                getInfo();
+            }
+            else {
+
+            }
+        });
+
+        function getInfo() {
+            $.ajax({
+
+                url: "https://reqres.in/api/users/10",
+                async: false,
+                dataType: 'json',
+                beforeSend: function () {
+                    $("#msg").text("..Loading")
+                },
+                type: "GET",
+                //data:
+                cache: false,
+                success: function (data) {
+                    $("#msg").text("Loaded.");
+
+                },
+                error: function (errata) {
+                    $("#msg").text("..failed");
+                    console.log(errata)
+                }
+            })
+        }
     }
 );
+
